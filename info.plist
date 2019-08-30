@@ -38,7 +38,7 @@
 				<key>argumenttype</key>
 				<integer>2</integer>
 				<key>keyword</key>
-				<string>ot</string>
+				<string>openterminal</string>
 				<key>subtext</key>
 				<string>在Termianl中打开当前目录</string>
 				<key>text</key>
@@ -58,7 +58,9 @@
 			<dict>
 				<key>applescript</key>
 				<string>on alfred_script(q)
-  tell application "Finder"	set pathLoc to POSIX path of (folder of the front window as alias)  end tell	  tell application "Terminal"	open pathLoc  end tell
+  try    tell application "Finder"      set pathLoc to POSIX path of (folder of the front window as alias)    end tell  on error    set pathLoc to POSIX path of (path to desktop as alias)
+  end try	  tell application "Terminal"    open pathLoc
+  end tell
 end alfred_script</string>
 				<key>cachescript</key>
 				<false/>
