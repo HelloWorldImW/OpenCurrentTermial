@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.wangzh.alfred.openTerminal</string>
+	<key>category</key>
+	<string>Tools</string>
+	<key>connections</key>
+	<dict>
+		<key>19AEE1E4-6D39-4906-912F-8AD9DF79EDFB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7EC69A96-5858-4D10-8AEF-70C5EE6250FE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Darren</string>
+	<key>description</key>
+	<string>Open Terminal</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>openTerminal</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>ot</string>
+				<key>subtext</key>
+				<string>在Termianl中打开当前目录</string>
+				<key>text</key>
+				<string>打开Terminal</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>19AEE1E4-6D39-4906-912F-8AD9DF79EDFB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>applescript</key>
+				<string>on alfred_script(q)
+  tell application "Finder"	set pathLoc to POSIX path of (folder of the front window as alias)  end tell	  tell application "Terminal"	open pathLoc  end tell
+end alfred_script</string>
+				<key>cachescript</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.applescript</string>
+			<key>uid</key>
+			<string>7EC69A96-5858-4D10-8AEF-70C5EE6250FE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>19AEE1E4-6D39-4906-912F-8AD9DF79EDFB</key>
+		<dict>
+			<key>xpos</key>
+			<integer>180</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
+		<key>7EC69A96-5858-4D10-8AEF-70C5EE6250FE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>390</integer>
+			<key>ypos</key>
+			<integer>100</integer>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>https://HelloWorldImW.github.io</string>
+</dict>
+</plist>
